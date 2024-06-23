@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial de Servidores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #4CAF50;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            height: auto;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>En esta Pagina web se mostrara una Guia sobre el Parcial 3 de Servidores</h1>
+    </header>
+    <main>
+        <h3>Actualización del Sistema</h3>
+        <p>Comando: sudo apt update && sudo apt upgrade</p>
+        <p>Este comando se utiliza para actualizar la lista de paquetes disponibles y sus versiones, seguido por la
+            actualización de todos los paquetes instalados en el sistema a sus últimas versiones disponibles. Es una
+            buena práctica mantener el sistema actualizado para asegurarse de tener las últimas correcciones de errores
+            y parches de seguridad.</p>
+
+            <ul>
+                <li><img src="1.png" alt="footer"></li>
+            </ul>
+
+            <ul>
+                <li><img src="2.png" alt="footer"></li>
+            </ul>
+
+        <h3>Instalación de Apache</h3>
+        <p>Comando: sudo apt install apache2</p>
+        <p>Este comando instala el servidor web Apache, que es uno de los servidores web más utilizados. Apache permite servir contenido web a los usuarios.</p>
+            
+            <ul>
+                <li><img src="3.png" alt="footer"></li>
+            </ul>
+        
+        <h3>Instalación de PHP</h3>
+        <p>Comando: sudo apt install php </p>
+        <p>PHP es un lenguaje de scripting del lado del servidor diseñado para el desarrollo web. Este comando instala PHP junto con el módulo de Apache que permite que Apache procese scripts PHP.</p>
+    
+            <ul>
+                <li><img src="4.png" alt=""></li>
+            </ul>
+
+        <h3>Configuración de Apache para Usar el Puerto 81</h3>
+        <p>sudo nano /etc/apache2/ports.conf
+            Cambio: Añadir Listen 81</p>
+        <p>Por defecto, Apache escucha en el puerto 80. Este cambio le indica a Apache que también escuche en el puerto 81.</p>
+    
+            <ul>
+                <li><img src="5.png" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="6.png" alt=""></li>
+            </ul>
+        
+        <h3>Edición del Archivo de Configuración del Sitio Web</h3>
+        <p>sudo nano /etc/apache2/sites-available/000-default.conf
+            Cambio: Cambiar VirtualHost *:80 a VirtualHost *:81 </p>
+        <p>Este cambio en la configuración del sitio web de Apache le dice a Apache que el sitio debería estar disponible en el puerto 81 en lugar del puerto 80.</p>
+            <ul>
+                <li><img src="7.png" alt=""></li>
+            </ul>
+        
+        <h3>Reiniciar Apache</h3>
+        <p>sudo systemctl restart apache2</p>
+        <p>Reinicia el servidor Apache para aplicar los cambios realizados en su configuración.</p>
+
+            <ul>
+                <li><img src="8.png" alt=""></li>
+            </ul>
+        
+        <h3>Instalación de MariaDB</h3>
+        <p>sudo apt install mariadb-server</p>
+        <p>MariaDB es un sistema de gestión de bases de datos relacional que es compatible con MySQL. Este comando instala el servidor de bases de datos MariaDB.</p>
+
+            <ul >
+                <li><img src="10.png" alt="footer"> </li>
+            </ul>
+
+            <ul>
+                <li><img src="12.png" alt="footer"></li>
+            </ul>
+
+        <h3>Verificación e Inicialización de MariaDB</h3>
+        <p>sudo mysql_secure_installation</p>
+        <p>Este comando ayuda a asegurar la instalación de MariaDB configurando una contraseña para el usuario root y eliminando cuentas de usuario anónimas, bases de datos de prueba, y deshabilitando el inicio de sesión remoto para el root.
+
+        <p>Nos aseguramos de que si haya quedado instalada la base de datos, aceptamos sus términos y condiciones y nos agradecerá con un mensaje.</p>
+        </p>
+
+            <ul>
+                <li><img src="13.png" alt=""></li>
+            </ul>
+        
+        <h3>Creación de la Base de Datos y Usuario para GLPI</h3>
+        <P>sudo mysql -u root -p</P>
+        <P>Estos comandos crean una base de datos llamada glpi, un usuario glpiuser con una contraseña especificada, y le otorgan todos los privilegios sobre la base de datos glpi.</P>
+
+            <ul>
+                <li><img src="14.png" alt=""></li>
+            </ul>
+
+            <ul>
+                <li><img src="15.png" alt=""></li>
+            </ul>
+
+        <h3>Instalación de GLPI</h3>
+        <p>wget -O- https://github.com/glpi-project/glpi/releases/download/9.5.3/glpi-9.5.3.tgz | tar -xzv</p>
+        <p>Este comando descarga y descomprime el archivo de GLPI, una aplicación de gestión de TI.</p>
+
+            <ul>
+                <li><img src="16.png" alt=""></li>
+            </ul>
+
+        <h3>Mover GLPI al Directorio de Apache</h3>
+        <p>sudo mv glpi /var/www/html</p>
+        <p>sudo chowm -R www-data:www.data /var/www/html/glpi</p>
+        <p>sudo chmod -R 755 /var/www/html/glpi</p>
+        <p>Este comando mueve el directorio descomprimido de GLPI al directorio raíz de documentos de Apache para que pueda ser servido como un sitio web.</p>
+
+            <ul>
+                <li><img src="17.png" alt=""></li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p> ---------------------- </p>
+    <p> ---------------------- </p>
+    
+    </main>
+    <style>
+        
+
+        li {
+            display: inline-block;
+            list-style-type: armenian;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+        
+        }
+
+        ul {
+            list-style-type: center;
+            
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+<div>
+    <div>
+        <footer>
+            <p>&copy; Sebastian Ruiz y Diego Vargas</p>
+            <p>2024</p>
+        </footer>
+    </div>
+</div>
+    
+</body>
+
+</html>
